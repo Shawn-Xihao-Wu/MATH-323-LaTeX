@@ -10,6 +10,7 @@
 \usepackage{bm}
 \usepackage{parskip}
 \usepackage{graphicx}
+\usepackage{bbm}
 
 % \geometry{left=0.5in, right=0.5in}
 
@@ -47,7 +48,58 @@
 \begin{document}
 
 % Problem 1
-\begin{fproof}[Jacobson 2.1.1] 
+\begin{fproof}[Jacobson 2.1.1]
+  Pick any functions \(f,g,h \in C\).
+
+  \((C, +, 0)\) is an abelian group. 
+
+  \textbf{Closure:}
+  Clearly that \(f+g\) is a function as well.
+
+  \textbf{Associativity:}
+  For all \(x \in \mathbb{R}\),
+  \([f(x) + g(x)] + h(x) = f(x) + [g(x) + h(x)]\) by the additive associativity of \(\mathbb{R}\). Thus, \((f + g) + h = f + (g + h)\).
+
+  \textbf{Identity:}
+  Since the integer 0 is the identity in \(\mathbb{R}\), \(f(x) + 0 = f(x) = 0 + f(x)\) for all \(x\), i.e., the zero function 0 is the identity here.
+
+  \textbf{Inverse:}
+  Note that for all \(x \in \mathbb{R}\), \(f(x) + (-1)f(x) = x - x = 0\). Thus, the additive inverse of function \(f\) is \((-1)f\) or simply \(-f\).
+
+  \textbf{Commutative:}
+  The abelianess of \(C\) follows from that of \(\mathbb{R}\). Note that for all \(x \in \mathbb{R}\), \(f(x) + g(x) = g(x) + f(x)\). Therefore, \(f + g = g + f\).
+
+  \begin{center}
+    \(\ast~\ast~\ast\)
+  \end{center}
+
+  \((C, \circ, \text{id}_{\mathbb{R}})\) is a monoid.
+
+  \textbf{Closure:}
+  Clearly that \(f \circ g\) is a function as well.
+
+  \textbf{Associativity:}
+  For all \(x \in \mathbb{R}\),
+  \(((f \circ g) \circ h) (x)= (f \circ g)(h(x)) = f(g(h(x))) = f((g \circ h) (x)) = (f \circ (g \circ h)) (x)\).
+  Thus, \(f \circ (g \circ h) = (f \circ g) \circ h\).
+
+  \textbf{Identity:}
+  For all \(x \in \mathbb{R}\), \((f \circ \text{id}_{\mathbb{R}}) (x) = f(\text{id}_{\mathbb{R}}(x)) = f(x) = \text{id}_{\mathbb{R}}(f(x)) = (\text{id}_{\mathbb{R}} \circ f)(x)\). Thus, \(f \circ \text{id}_{\mathbb{R}} = \text{id}_{\mathbb{R}} \circ f\).
+
+  \begin{center}
+    \(\ast~\ast~\ast\)
+  \end{center}
+
+  \((C, +, \circ)\) is not a ring as it violates the distributive law.
+  Let \(f(x) = \abs{x}, g(x) = 2, h(x) = -2\) for all \(x \in \mathbb{R}\).
+  Then for all \(x\),
+  \begin{align*}
+    (f \circ (g + h))(x) = 0 \neq 4 = (f \circ g + f \circ h)(x).
+  \end{align*}
+
+
+
+
 \end{fproof}
 
 \newpage
