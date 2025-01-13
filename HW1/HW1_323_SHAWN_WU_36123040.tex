@@ -96,16 +96,49 @@
   \begin{align*}
     (f \circ (g + h))(x) = 0 \neq 4 = (f \circ g + f \circ h)(x).
   \end{align*}
-
-
-
-
 \end{fproof}
 
 \newpage
 
 % Problem 2
 \begin{fproof}[Jacobson 2.1.4]
+  Pick any \(a + b \sqrt{-3}, c + d \sqrt{-3} \in I\).
+
+  First, \(I\) is a subgroup of the additive group of \(\mathbb{C}\).
+  Note that\((a + b \sqrt{-3}) - (c + d \sqrt{-3}) = (a-c) + (b-d) \sqrt{-3}\).
+  Then,
+
+  \textbf{Case 1:} If all \(a,b,c,d \in \mathbb{Z}\), then \(a-c, b-d \in \mathbb{Z}\).
+
+  \textbf{Case 2:} If all \(a,b,c,d\) are halfs of odd integers, i.e., \(a = a' + 1/2, b = b' + 1/2, c = c' + 1/2, d = d' + 1/2\), for some \(a',b',c',d' \in \mathbb{Z}\).
+  So, \(a-c = a'-c' \in \mathbb{Z}, b-d = b'-d' \in \mathbb{Z}\).
+
+  \textbf{Case 3:} If only \(a,b \in \mathbb{Z}\) but \(c,d\) are halfs of odd integers, i.e., \(c = c' + 1/2, d = d' + 1/2\).
+  Then \(a-c = (a-c') - 1/2, b-d = (b - d') - 1/2\) where \(a-c', b-d' \in \mathbb{Z}\). So, \(a-c, b-d\) are halfs of odd integers.
+
+  \textbf{Case 4:} If \(a,b\) are halfs of odd integers but \(c,d \in \mathbb{Z}\). Then similar as in case 3, both \(a-c, b-d\) are halfs of odd integers.
+
+  Therefore, in all four cases, \((a-c) + (b-d) \sqrt{-3} \in I\). Based on the subgroup criteria, \(I\) is an additive subgroup of \(\mathbb{C}\).
+
+  Next, \(I\) is a submonoid of the multiplicative monoid of \(\mathbb{C}\).
+  First note that since \(1, 0 \in \mathbb{Z}\), then \(1 = 1 + 0 \sqrt{-3} \in I\). It remains to check that \(I\) is closed under multiplication.
+  Note that \((a + b \sqrt{-3})(c + d \sqrt{-3}) = (ac - 3bd) + (ad + bc) \sqrt{-3}\). Then,
+
+  \textbf{Case 1:} If all \(a,b,c,d \in \mathbb{Z}\), then \(ac-3bd, ad+bc \in \mathbb{Z}\) as well.
+
+  \textbf{Case 2:} If all \(a,b,c,d\) are halfs of odd integers as before. Then,
+  \(ac - 3bd = (a' + 1/2)(c' + 1/2) - 3(b'+1/2)(d'+1/2) = a'c' + a'/2 + c'/2 + 1/4 - 3(b'd' + b'/2 + d'/2 + 1/4) = a'c'- 3b'd' + 1/2(a' + c' -3b' - 3d') - 1/2\), which is an integer if \(a' + c' -3b' - 3d'\) is odd, and is a half of an odd integer of \(a' + c' -3b' - 3d'\) is even. Similarly, \(ad + bc = a'd' + a'/2 + d'/2 + 1/4 + b'c' + b'/2 + c'/2 + 1/4 = a'd' + b'c' + 1/2(a' + b' + c' + d') + 1/2\), which is either an integer of a half of an odd integer.
+
+  \textbf{Case 3:} If \(a,b \in \mathbb{Z}\) but \(c,d\) are halfs of odd integers.
+  Then consider \(2(ac - 3bd) = 2a(c' + 1/2) -6b(d'+1/2) = 2ac' + 1 - 6bd' - 3 \in \mathbb{Z}\), which means that \(ac - 3bd\) is either itself an integer of a half of an odd integer.
+  Similarly, consider \(2(ad+bc) = 2a(d'+1/2) + 2b(c'+1/2) = 2ad'+a + 2bc' + b \in \mathbb{Z}\), which means that \(ad + bc\) is either itself an integer of a half on odd integer.
+
+  \textbf{Case 4}: If \(c,d \in \mathbb{Z}\) but \(a,b\) are halfs of odd integers. Then similar to case 3, it reaches the same conclusion.
+
+  Therefore, in all four cases, \((ac - 3bd) + (ad + bc) \sqrt{-3} \in I\), i.e., \(I\) is closed under multiplication.
+  \(I\) is a subring of \(\mathbb{C}\).
+
+
 \end{fproof}
 
 \newpage
