@@ -1,0 +1,136 @@
+% Prevent loading the file multiple times
+\ProvidesPackage{yassification}
+
+% Load required packages
+\usepackage[margin=1.0in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{bm}
+
+\usepackage{graphicx}
+
+% \geometry{left=0.5in, right=0.5in}
+
+% To start each section (problem) on a new page
+% \titleformat{\section}[block]{\normalfont\bfseries}{\thesection}{1em}{}
+% \titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+% \newcommand{\sectionbreak}{\clearpage}
+
+% Custom environments
+\newenvironment{fproof}[1][]
+  {\begin{proof}[\ifx\relax#1\relax\else\textbf{\large #1} Proof\fi]}
+  {\end{proof}}
+
+% Redefine the QED symbol
+\renewcommand{\qedsymbol}{\rule{0.7em}{0.7em}}  % Solid square
+
+% Custom commands
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\angl}[1]{\left\langle #1 \right\rangle}
+\newcommand{\pare}[1]{\left( #1 \right)}
+\newcommand{\brac}[1]{\left[ #1 \right]}
+
+%% comment these out if using physics package
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+% integration
+\newcommand{\upint}[2]{\overline{\int_{#1}^{#2}}}
+\newcommand{\loint}[2]{\underline{\int_{#1}^{#2}}}
+
+% LaTeX \dh,\do,\dp are internals (\dh doesn't seem to be useful)
+% so using dfa,dfb, etc except for a few very useful ones.
+
+\newcommand\diff{\mathop{}\!\mathrm{d}}
+\newcommand\pdiff{\partial}
+
+\newcommand\dr{\diff r}		\newcommand\dR{\diff R}
+\newcommand\ds{\diff s}		\newcommand\dS{\diff S}
+\newcommand\dt{\diff t}		\newcommand\dT{\diff T}
+\newcommand\du{\diff u}		\newcommand\dU{\diff U}
+\newcommand\dv{\diff v}		\newcommand\dV{\diff V}
+\newcommand\dw{\diff w}		\newcommand\dW{\diff W}
+\newcommand\dx{\diff x}		\newcommand\dX{\diff X}
+\newcommand\dy{\diff y}		\newcommand\dY{\diff Y}
+\newcommand\dz{\diff z}		\newcommand\dZ{\diff Z}
+
+\newcommand\dfa{\diff a}
+\newcommand\dfb{\diff b}
+\newcommand\dfc{\diff c}
+\newcommand\dfd{\diff d}
+\newcommand\dfe{\diff e}
+\newcommand\dff{\diff f}
+\newcommand\dfg{\diff g}
+\newcommand\dfh{\diff h}
+\newcommand\dfi{\diff i}
+\newcommand\dfj{\diff j}
+\newcommand\dfk{\diff k}
+\newcommand\dfl{\diff l}
+\newcommand\dfm{\diff m}
+\newcommand\dfn{\diff n}
+\newcommand\dfo{\diff o}
+\newcommand\dfp{\diff p}
+\newcommand\dfq{\diff q}
+\newcommand\dfr{\diff r}
+\newcommand\dfs{\diff s}
+\newcommand\dft{\diff t}
+\newcommand\dfu{\diff u}
+\newcommand\dfv{\diff v}
+\newcommand\dfw{\diff w}
+\newcommand\dfx{\diff x}
+\newcommand\dfy{\diff y}
+\newcommand\dfz{\diff z}
+\newcommand\dfA{\diff A}
+\newcommand\dfB{\diff B}
+\newcommand\dfC{\diff C}
+\newcommand\dfD{\diff D}
+\newcommand\dfE{\diff E}
+\newcommand\dfF{\diff F}
+\newcommand\dfG{\diff G}
+\newcommand\dfH{\diff H}
+\newcommand\dfI{\diff I}
+\newcommand\dfJ{\diff J}
+\newcommand\dfK{\diff K}
+\newcommand\dfL{\diff L}
+\newcommand\dfM{\diff M}
+\newcommand\dfN{\diff N}
+\newcommand\dfO{\diff O}
+\newcommand\dfP{\diff P}
+\newcommand\dfQ{\diff Q}
+\newcommand\dfR{\diff R}
+\newcommand\dfS{\diff S}
+\newcommand\dfT{\diff T}
+\newcommand\dfU{\diff U}
+\newcommand\dfV{\diff V}
+\newcommand\dfW{\diff W}
+\newcommand\dfX{\diff X}
+\newcommand\dfY{\diff Y}
+\newcommand\dfZ{\diff Z}
+
+\newcommand\dalf{\diff\alpha}
+\newcommand\dbet{\diff\beta}
+\newcommand\dgam{\diff\gamma}
+\newcommand\deps{\diff\epsilon}
+\newcommand\dth{\diff\theta}
+\newcommand\dmu{\diff\mu}
+\newcommand\dnu{\diff\nu}
+\newcommand\dpi{\diff\pi}
+\newcommand\drho{\diff\rho}
+\newcommand\dsig{\diff\sigma}
+\newcommand\dtau{\diff\tau}
+
+\newcommand\dvol{\diff\!\vol}
+\newcommand\dVol{\diff\!\Vol}
+
+\newcommand\dcross{\diff^{\kern-2pt\raisebox{1pt}{$\times$}}\kern-8pt}
+\newcommand\dxa{\dcross a}
+\newcommand\dxy{\dcross y}
+\newcommand\dxz{\dcross z}
