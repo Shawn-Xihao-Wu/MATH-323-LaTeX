@@ -222,6 +222,53 @@
 
 % Problem 6
 \begin{fproof}[Jacobson 2.2.7]\
+  Suppose that element \(u\) in a ring \(R\) has one right inverse \(x\).
+  We then claim that the \(\set{x_n}_{n \in \mathbb{N}}\) is an infinite collection of distinct right inverses of \(u\), where,
+  \begin{align*}
+    x_n = x + (1-xu)u^n.
+  \end{align*}
+  We first see that each \(x_n\) is a right inverse of \(u\). Note that
+  \begin{align*}
+    ux_n & = u(x + (1-xu)u^n) = ux + u(1-xu)u^n = ux + (u - (ux)u)u^n \\
+    & = ux + (u-u)u^n = ux + 0 \cdot u^n\\
+    & = ux \\
+    & = 1.
+  \end{align*}
+  We next see that \(x_n \neq x_m\) if \(n \neq m\).
+  Suppose the contrary that \(n \neq m\) but \(x_n = x_m\) (WLOG assume \(n > m\)).
+  First notice that since \(u\) has a right inverse, then \(u\) is not a right zero-divisor, meaning that \(u\) obeys the right cancellation law.
+  To see this, suppose \(au = bu\) for some \(a,b \in R\).
+  Then \((a-b)u = 0\).
+  Note then that
+  \begin{align*}
+    0 = 0 \cdot x = [(a-b)u]x = (a-b)[ux] = a-b.
+  \end{align*}
+  Therefore, \(a=b\), i.e., we can cancel \(u\) on the right.
 
+  Going back the proof, if \(x_n = x_m\), then
+  \begin{align*}
+    x + (1-xu)u^n = x + (1-xu)u^m 
+    &\implies (1-xu)u^n = (1-xu)u^m \\
+    &\implies (1-xu)u^{n-m} = 1-xu \tag{cancel \(u\) on the right}\\
+    & \implies (1-xu)u^{n-m} + xu = 1\\
+    & \implies ((1-xu)u^{n-m-1} + x)u = 1,
+  \end{align*}
+  i.e., \(u\) has a left inverse, which means that \(u\) is a unit.
+  However, we have established in the previous exercise that \(u\) is not a unit since \(u\) has more than one right inverse.
+  Therefore, \(x_n \neq x_m\), i.e., all \(x_n\)'s are distinct.
+  \begin{center}
+    \(\ast~\ast~\ast\)
+  \end{center}
+  Consider the following counter-example.
+  Let \(R\) be the set of continuous functions on \([0, + \infty)\).
+  Then as in Ex 2.1.1, we see that \((R, \circ, \text{id})\) is a monoid.
+  Consider the function \(f \in R\) where \(f(x) = x^2\) for all \(x \in [0,+\infty)\).
+  Suppose \(g\) is a right inverse of \(f\), then we must have
+  \begin{align*}
+    (f \circ g)(x) = x &\implies f(g(x)) = x \\
+    & \implies g(x)^2 = x\\
+    & \implies g(x) = \pm \sqrt{x}.
+  \end{align*}
+  Since \(g\) has to be continuous, then either \(g(x) = + \sqrt{x}\) or \(g(x) = - \sqrt{x}\), and only those two options. So \(f\) has exactly two right inverses, not infinitely many.
 \end{fproof}
 \end{document}
