@@ -60,7 +60,6 @@
     (f \circ (g + h))(x) = 0 \neq 4 = (f \circ g + f \circ h)(x).
   \end{align*}
 \end{fproof}
-
 \newpage
 
 % Problem 2
@@ -90,44 +89,115 @@
   \textbf{Case 1:} If all \(a,b,c,d \in \mathbb{Z}\), then \(ac-3bd, ad+bc \in \mathbb{Z}\) as well.
 
   \textbf{Case 2:} If all \(a,b,c,d\) are halfs of odd integers as before. Then,
-  \(ac - 3bd = (a' + 1/2)(c' + 1/2) - 3(b'+1/2)(d'+1/2) = a'c' + a'/2 + c'/2 + 1/4 - 3(b'd' + b'/2 + d'/2 + 1/4) = a'c'- 3b'd' + 1/2(a' + c' -3b' - 3d') - 1/2\), which is an integer if \(a' + c' -3b' - 3d'\) is odd, and is a half of an odd integer of \(a' + c' -3b' - 3d'\) is even. Similarly, \(ad + bc = a'd' + a'/2 + d'/2 + 1/4 + b'c' + b'/2 + c'/2 + 1/4 = a'd' + b'c' + 1/2(a' + b' + c' + d') + 1/2\), which is either an integer of a half of an odd integer.
+  \begin{align*}
+    ac - 3bd &= (a' + 1/2)(c' + 1/2) - 3(b'+1/2)(d'+1/2) \\
+    & = a'c' + a'/2 + c'/2 + 1/4 - 3(b'd' + b'/2 + d'/2 + 1/4) \\
+    & = a'c'- 3b'd' + 1/2(a' + c' -3b' - 3d') - 1/2,
+  \end{align*}
+  which is either an integer or a half of an odd integer. Note that \(ac - 3bd \in \mathbb{Z}\) iff \(a' + c' -3b' - 3d'\) is odd, and \(ac - 3bd\) is a half of an odd integer iff \(a' + c' -3b' - 3d'\) is even. 
+  
+  Similarly, 
+  \begin{align*}
+    ad + bc &= a'd' + a'/2 + d'/2 + 1/4 + b'c' + b'/2 + c'/2 + 1/4 \\
+    & = a'd' + b'c' + 1/2(a' + b' + c' + d') + 1/2
+  \end{align*}
+  which is either an integer or a half of an odd integer.
+  Note that \(ad + bc \in \mathbb{Z}\) iff \(a' + b' + c' + d'\) is odd, and \(ad + bc\) is a half of an odd integer iff \(a' + b' + c' + d'\) is even.
+
+  Now, if \((ad+bc) \in \mathbb{Z}\), then \(a'+b'+c'+d'\) is odd. This means that either one or three of \(a',b',c',d'\) are odd. This gives that \(a' + c' -3b'-3d'\) is also odd, as multiplying by \(-3\) does not change the parity of an integer, which in turn gives that \((ac-3bd) \in \mathbb{Z}\). And by a similar argument, \((ac-3bd) \in \mathbb{Z} \implies (ad+bc) \in \mathbb{Z}.\)
+
 
   \textbf{Case 3:} If \(a,b \in \mathbb{Z}\) but \(c,d\) are halfs of odd integers.
-  Then consider \(2(ac - 3bd) = 2a(c' + 1/2) -6b(d'+1/2) = 2ac' + 1 - 6bd' - 3 \in \mathbb{Z}\), which means that \(ac - 3bd\) is either itself an integer of a half of an odd integer.
-  Similarly, consider \(2(ad+bc) = 2a(d'+1/2) + 2b(c'+1/2) = 2ad'+a + 2bc' + b \in \mathbb{Z}\), which means that \(ad + bc\) is either itself an integer of a half on odd integer.
+  Then,
+  \begin{align*}
+    ac - 3bd & = a(c' + 1/2) -3b(d'+1/2) \\
+    & = ac' + a/2 - 3bd' - 3b/2\\
+    & = (ac' - 3bd') - (a-3b)/2,
+  \end{align*}
+  which means that \(ac - 3bd\) is either an integer or a half of an integer.
+  Note that \(ac - 3bd \in \mathbb{Z}\) iff \(a-3b\) is even, and \(ac - 3bd\) a half of an odd integer iff \(a-3b\) is odd.
+
+  Similarly, 
+  \begin{align*}
+    ad+bc &= a(d'+1/2) + b(c'+1/2) \\
+    & =  (ad' + bc') + (a+b)/2,
+  \end{align*}
+  which means that \(ad + bc\) is either an integer or a half on odd integer.
+  Note that \(ad + bc \in \mathbb{Z}\) iff \(a+b\) is even, and \(ad + bc\) is half of an odd integer iff \(a+b\) is odd.
+
+  Now, if \(ac-3bd \in \mathbb{Z}\), then \(a-3b\) is even.
+  So \(a,b\) have the same parity, which means that \(a+b\) is even as well.
+  This gives that \(ad+bc\) is an integer as well.
+  And by a similar reasoning on parity, \(ad+bc \in \mathbb{Z} \implies ac-3bd \in \mathbb{Z}\).
 
   \textbf{Case 4}: If \(c,d \in \mathbb{Z}\) but \(a,b\) are halfs of odd integers. Then similar to case 3, it reaches the same conclusion.
 
-  Therefore, in all four cases, \((ac - 3bd) + (ad + bc) \sqrt{-3} \in I\), i.e., \(I\) is closed under multiplication.
+  Therefore, in all four cases, \(ac-3bd\) and \(ad+bc\) are either both integers of both halfs of odd integers. This means that \((ac - 3bd) + (ad + bc) \sqrt{-3} \in I\), i.e., \(I\) is closed under multiplication.
   \(I\) is a subring of \(\mathbb{C}\).
-
-
 \end{fproof}
-
 \newpage
 
 % Problem 3
 \begin{fproof}[Jacobson 2.2.1]
-  
-\end{fproof}
+  Let a finite domain \(R\) be given.
+  Pick any nonzero element \(a \in R\). We aim to show that there exists \(a^{-1} \in R\) such that \(a^{-1}a = 1 = aa^{-1}\).
+  It is suffice to show that \(a\) has both a right inverse \(a^{-1}_R\) and a left inverse \(a^{-1}_L\); if so, we have,
+  \begin{align*}
+    a^{-1}_R = (a^{-1}_La)a^{-1}_R = a^{-1}_L(aa^{-1}_R) = a^{-1}_L,
+  \end{align*}
+  i.e., the left inverse equals to the right inverse, which means the inverse \(a^{-1}\) exists.
 
+  First note that since \(R\) is a domain, then the left cancellation law holds. To see this, assume \(ax = ay\) for some \(x,y \in R\), then \(ax - ay = 0\), which gives \(a(x-y) = 0\). Since \(a \neq 0\) and we are in a domain, \(a\) is thus not a zero-divisor, which means that \(x-y=0 \implies x = y\).
+
+  Now since \(R\) is finite, we can enumerate all elements of \(R\) as 
+  \begin{align*}
+    r_1, r_2, \cdots, r_k,
+  \end{align*}
+  for some positive integer \(k\).
+  And we claim that the following is also an enumeration of all elements of \(R\),
+  \begin{align*}
+    ar_1, ar_2, \cdots, ar_k,
+  \end{align*}
+  as it contains \(k\) distinct elements of \(R\).
+  Note that they are distinct because if \(ar_i = ar_j\), then by left cancellation law established above, \(r_i = r_j\).
+  Therefore, there exists \(1 \leq s \leq k\) such that \(ar_s = 1\), i.e., \(a^{-1}_R = r_s\).
+  And by a similar argument as above, \(a\) must also have a left inverse \(a^{-1}_L\). 
+  This proves that \(a^{-1}\) exists, which concludes the proof.
+\end{fproof}
 \newpage
 
 % Problem 4
 \begin{fproof}[Jacobson 2.2.4]
-\end{fproof}
+  We show that \(1-ba\) has both a left inverse and a right inverse, and they are equal.
 
+  We name the inverse of \(1-ab\) as \(c\). Then, we see that
+  \begin{align*}
+    (1-ab)c = 1 & \implies c - abc = 1 \implies bc - babc = b \implies bca - babca = ba \\
+    & \implies (1-ba)bca = ba \implies (1-ba)bca - ba = 0\\
+    & \implies (1-ba)bca + (1-ba) = 1\\
+    & \implies (1-ba)(bca + 1) = 1.
+  \end{align*}
+  Therefore, \((1-ba)^{-1}_R\) exists.
+  Similarly,
+  \begin{align*}
+    c(1-ab) = 1 & \implies c - cab = 1 \implies ca - caba = a \implies bca - bcaba = ba\\
+    & \implies bca(1-ba) = ba \implies bca(1-ba) - ba = 0\\
+    & \implies bca(1-ba) + (1-ba) = 1\\
+    & \implies (bca + 1)(1-ba) = 1.
+  \end{align*}
+  Therefore, \((1-ba)^{-1}_L\) exists.
+  Since \((1-ba)^{-1}_L = bca+1 = (1-ba)^{-1}_R\), this concludes the proof.
+\end{fproof}
 \newpage
 
 % Problem 5
 \begin{fproof}[Jacobson 2.2.6]
-\end{fproof}
 
+\end{fproof}
 \newpage
 
 % Problem 6
-\begin{fproof}[Jacobson 2.2.7]
+\begin{fproof}[Jacobson 2.2.7]\
+
 \end{fproof}
-
-
 \end{document}
