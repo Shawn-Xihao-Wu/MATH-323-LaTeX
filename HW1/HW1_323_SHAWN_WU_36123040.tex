@@ -12,22 +12,22 @@
 
 % Problem 1
 \begin{fproof}[Jacobson 2.1.1]
-  Pick any functions \(f,g,h \in C\).
+  Pick any continuous functions \(f,g,h \in C\).
 
   \((C, +, 0)\) is an abelian group. 
 
   \textbf{Closure:}
-  Clearly that \(f+g\) is a function as well.
+  Clearly that \(f+g\) is a continuous function as well.
 
   \textbf{Associativity:}
   For all \(x \in \mathbb{R}\),
   \([f(x) + g(x)] + h(x) = f(x) + [g(x) + h(x)]\) by the additive associativity of \(\mathbb{R}\). Thus, \((f + g) + h = f + (g + h)\).
 
   \textbf{Identity:}
-  Since the integer 0 is the identity in \(\mathbb{R}\), \(f(x) + 0 = f(x) = 0 + f(x)\) for all \(x\), i.e., the zero function 0 is the identity here.
+  Since the integer 0 is the identity in \(\mathbb{R}\), \(f(x) + 0 = f(x) = 0 + f(x)\) for all \(x\), i.e., the zero function 0 is the identity here, and note that it is continuous.
 
   \textbf{Inverse:}
-  Note that for all \(x \in \mathbb{R}\), \(f(x) + (-1)f(x) = x - x = 0\). Thus, the additive inverse of function \(f\) is \((-1)f\) or simply \(-f\).
+  Note that for all \(x \in \mathbb{R}\), \(f(x) + (-1)f(x) = x - x = 0\). Thus, the additive inverse of function \(f\) is \((-1)f\) or simply \(-f\), and it is continuous.
 
   \textbf{Commutative:}
   The abelianess of \(C\) follows from that of \(\mathbb{R}\). Note that for all \(x \in \mathbb{R}\), \(f(x) + g(x) = g(x) + f(x)\). Therefore, \(f + g = g + f\).
@@ -39,7 +39,7 @@
   \((C, \circ, \text{id}_{\mathbb{R}})\) is a monoid.
 
   \textbf{Closure:}
-  Clearly that \(f \circ g\) is a function as well.
+  Clearly that \(f \circ g\) is a continuous function as well.
 
   \textbf{Associativity:}
   For all \(x \in \mathbb{R}\),
