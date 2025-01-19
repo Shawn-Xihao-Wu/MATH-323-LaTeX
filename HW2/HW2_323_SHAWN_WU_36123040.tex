@@ -37,7 +37,25 @@
 
 % Problem 3
 \begin{fproof}[Jacobson 2.5.2]
-  
+  We first show that \((IJ)K \subseteq I(JK)\).
+  Pick any element \(x \in (IJ)K\).
+  Then,
+  \begin{align*}
+    x = d_1c_1 + d_2c_2 + \cdots + d_{m}c_{m},
+  \end{align*}
+  where \(m \in \mathbb{N}\), and \(d_1, \cdots, d_{m} \in IJ\),\( c_1, \cdots, c_{m} \in K\).
+  Also note that for each \(i = 1, \cdots, m\).
+  \(d_i = a_1b_1 + a_2b_2 + \cdots + a_{t_i}b_{t_i}\) where \(t_i \in \mathbb{N}\), \(a_1, \cdots, a_{t_i} \in I\), \(b_1, \cdots, b_{t_i} \in J\).
+  Therefore,
+  \begin{align*}
+    x &= d_1c_1 + d_2c_2 + \cdots + d_{m}c_{m}\\
+    &= \sum_{j=1}^{t_1} a_jb_jc_1 + \sum_{j=1}^{t_2} a_jb_jc_2 + \cdots + \sum_{j=1}^{t_m} a_jb_jc_m\\
+    &= \sum_{j=1}^{t_1} a_j(b_jc_1) + \sum_{j=1}^{t_2} a_j(b_jc_2) + \cdots + \sum_{j=1}^{t_m} a_j(b_jc_m).
+  \end{align*}
+  Note that each \(b_jc_i\) is an element of \(JK\).
+  Therefore, the above sum is in the finite sum of products elements of \(I\) with elements of \(JK\).
+  Therefore, \(x \in I(JK)\).
+  And with a similar reasoning on the associativity of multiplication of the ring, we get that \((IJ)K \supseteq I(JK)\).
 \end{fproof}
 \newpage
 
