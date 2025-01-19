@@ -16,7 +16,16 @@
 
 % Problem 1
 \begin{fproof}[Jacobson 2.3.2]
-
+    First note that since \(R\) is commutative, then according to Jacobson on p.95, any main formulas on determinants on linear algebra over a field can be extended to that over \(R\), which means that \(\det: M_n(R) \to R\) is a homomorphism.
+    Therefore, since \(AB = 1\), 
+    \begin{align*}
+        1 = \det(1)= \det(AB) = \det(A) \det(B) = \det(B)\det(A)
+    \end{align*}
+    This means that \(\det(A), \det(B)\) are invertible in \(R\).
+    And by Theorem 2.1 in Jacobson,
+    \(A^{-1}\) and \(B^{-1}\) thus exists.
+    Since \(AB = 1\), \(B\) is invertible in \(M_n(R)\), then \(B^{-1} = A\), as multiplicative inverse is unique.
+    Therefore, \(BA = AB = 1\).
 \end{fproof}
 \newpage
 
