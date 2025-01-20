@@ -123,7 +123,7 @@
         \pm 1, \pm \vi, \pm \vj, \pm \vk, \frac{1}{2}(1 \pm \vi \pm \vj \pm \vk),
     \end{align*}
     and they are all units as their inverses in \(\H\) are in \(I\) as well.
-    
+
 
 \end{fproof}
 \newpage
@@ -154,7 +154,45 @@
 
 % Problem 4
 \begin{fproof}[Jacobson 2.5.3]
-    
+    The distributive law holds.
+    We first show that \(I(J + K) \subseteq IJ + IK\).
+    Pick any \(x \in I(J+K)\),
+    then
+    \begin{align*}
+        x = a_1d_1 + a_2d_2 + \cdots + a_md_m,
+    \end{align*}
+    where \(m \in \mathbb{N}\), \(a_1, \cdots, a_m \in I\), \(d_1, \cdots, d_m \in J+K\).
+    And for each \(i = 1, \cdots, m\),
+    \begin{align*}
+        d_i = b_i + c_i,
+    \end{align*}
+    where \(b_i \in J\), \(c_i \in K\).
+    Therefore,
+    \begin{align*}
+        x &= a_1(b_1 + c_1) + a_2(b_2 + c_2) + \cdots + a_m(b_m + c_m)\\
+        &=(a_1b_1 + a_1c_1) + (a_2b_2 + a_2c_2) + \cdots + (a_mb_m + a_mc_m)\\
+        &=(a_1b_1 + a_2b_2 + \cdots + a_mb_m) + (a_1c_1 + a_2c_2 + \cdots + a_mc_m).
+    \end{align*}
+    Note that since \(a_1b_1 + a_2b_2 + \cdots + a_mb_m \in IJ\), \(a_1c_1 + a_2c_2 + \cdots + a_mc_m \in IK\), \(x \in IJ + IK\).
+
+    It remains to show that \(I(J+K) \supseteq IJ + IK\).
+    Pick any \(x \in IJ + IK\).
+    Then
+    \begin{align*}
+        x = v + u,
+    \end{align*}
+    where \(v \in IJ\) and \(u \in IK\).
+    This means that,
+    \begin{align*}
+        v = a_{i_1}b_1 + a_{i_2}b_2 + \cdots + a_{i_s}b_s, \text{ and } u = a_{j_1}c_1 + a_{j_2}c_2 + \cdots + a_{j_t}c_t,
+    \end{align*}
+    where \(s,t \in \mathbb{N}\), \(a_{i_1}, \cdots, a_{i_s}, a_{j_1}, \cdots, a_{j_t} \in I\), \(b_1, \cdots, b_s \in J\), \(c_1, \cdots, c_t \in K\).
+    Therefore,
+    \begin{align*}
+        x = a_{i_1}b_1 + a_{i_2}b_2 + \cdots + a_{i_s}b_s + a_{j_1}c_1 + a_{j_2}c_2 + \cdots + a_{j_t}c_t.
+    \end{align*}
+    Note that \(b_1, \cdots, b_s, c_1, \cdots, c_t \in J + K\) since \(0 \in J\) and \(0 \in K\) so \(b = b + 0 \in J+K\) for any \(b \in J\); similarly \(c \in J+K\) for any \(c \in K\).
+    Therefore, \(x \in I(J+K)\).
 \end{fproof}
 \newpage
 
