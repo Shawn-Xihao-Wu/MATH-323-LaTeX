@@ -1,4 +1,6 @@
 \documentclass[12pt]{article}
+\usepackage{parskip} % no auto indent
+\usepackage{graphicx} % graphics
 
 % My marco file
 \usepackage{mymarco}
@@ -31,6 +33,97 @@
 
 % Problem 2
 \begin{fproof}[Jacobson 2.4.5]
+    Pick any \(\alpha_1 + \alpha_2\vi + \alpha_3 \vj + \alpha_4\vk\), \(\beta_1 + \beta_2\vi + \beta_3 \vj + \beta_4\vk \in I\).
+    We first show that \((I, +, 0)\) is a subgroup of \(\mathbb{H}\).
+    Note that
+    \begin{align*}
+        &(\alpha_1 + \alpha_2\vi + \alpha_3 \vj + \alpha_4\vk) - (\beta_1 + \beta_2\vi + \beta_3 \vj + \beta_4\vk \in I)\\
+        =&(\alpha_1 - \beta_1) + (\alpha_2 - \beta_2)\vi + (\alpha_3 - \beta_3)\vj + (\alpha_4 - \beta_4)\vk.
+    \end{align*}
+    \textbf{Case 1:}
+    If all of \(\alpha_i\) and \(\beta_i\) are integers, then all \(\alpha_i - \beta_i\) are integers as well.
+
+    \textbf{Case 2:}
+    If all of \(\alpha_i\) and \(\beta_i\) are halfs of odd integers, then clearly \(\alpha_i - \beta_i\) are integers as well.
+
+    \textbf{Case 3:}
+    If all \(\alpha_i\) are integers but all \(\beta_i\) are halfs of odd integers,
+    then clearly all \(\alpha_i - \beta_i\) are halfs of integers as well.
+
+    \textbf{Case 4:}
+    If all \(\alpha_i\) are halfs of odd integers but all \(\beta_i\) are integers.
+    This cases is similar to Case 3. All \(\alpha_i - \beta_i\) are halfs of integers.
+
+    Therefore, by subgroup criteria, \((I, +, 0)\) is indeed a subgroup of \(\H\).
+
+    Next we show that \((I, \cdot, 1)\) is a submonoid of \(\H\).
+    First note that \(1 \in I\) as \(1 = 1 + 0\vi + 0\vj + 0\vk\) and \(0 \in \mathbb{Z}\).
+    It remains to check that \(I\) is closed under multiplication.
+    Note that
+    \begin{align*}
+        &(\alpha_1 + \alpha_2\vi + \alpha_3 \vj + \alpha_4\vk)(\beta_1 + \beta_2\vi + \beta_3 \vj + \beta_4\vk)\\
+        &=\alpha_1 \beta_1 - \alpha_2 \beta_2 - \alpha_3 \beta_3 - \alpha_4 \beta_4\\
+        & +(\alpha_1 \beta_2 + \alpha_2 \beta_1 + \alpha_3 \beta_4 - \alpha_4 \beta_3)\vi\\
+        & +(\alpha_1 \beta_3 - \alpha_2 \beta_4 + \alpha_3 \beta_1 + \alpha_4 \beta_2)\vj\\
+        & +(\alpha_1 \beta_4 + \alpha_2 \beta_3 - \alpha_3 \beta_2 + \alpha_4 \beta_1)\vk.
+    \end{align*}
+
+    \textbf{Case 1:}
+    If all \(\alpha_i\) and \(\beta_i\) are integers, then clearly all coefficients \(\vi, \vj, \vj\) and the constant coefficients are integers as well.
+
+    \textbf{Case 2:} If all \(\alpha_i\) and \(\beta_i\) are halfs of odd integers.
+    Note that since each of four coefficients is in the form of \(\sum \alpha_{i'} \beta_{j'}\), and with how the plus and minus operations are arranged, it's clear that each coefficients are halfs of integers.
+
+    \textbf{Case 3:} If all \(\alpha_i\) are integers but all \(\beta_i\) are halfs of integers.
+    Then each \(\alpha_{i'}\beta_{j'}\) is either an integer of a half of an odd integer, depending on the parity of \(\alpha_{i'}\).
+    And each coefficients must be either an integer of a half of an odd integer as well, as it is a sum of integers or halfs of odd integers.
+
+    \textbf{Case 4:} If all \(\alpha_i\) are halfs of odd integers but all \(\beta_i\) are integers. This is similar to Case 3, and the same conclusion can be drawn.
+
+    Therefore, all four cases have \((\alpha_1 + \alpha_2\vi + \alpha_3 \vj + \alpha_4\vk)(\beta_1 + \beta_2\vi + \beta_3 \vj + \beta_4\vk) \in I\).
+    \((I, +, \cdot)\) is a subring of \(\H\).
+
+    \begin{center}
+        \(\ast~\ast~\ast\)
+    \end{center}
+
+    This is unfortunately NOT a division ring as not every element has an inverse.
+    Consider the element \(\vi + \vj + \vk \in I\), then its inverse in \(\H\),
+    \begin{align*}
+        (\vi + \vj + \vk)^{-1}  = \frac{1}{0^2+1^2+1^2+1^2}(-\vi-\vj-\vk) = -\frac{1}{3}\vi - \frac{1}{3} \vj - \frac{1}{3} \vk.
+    \end{align*}
+    However, \(-1/3\) is neither an integer of a half of an odd integer.
+
+    \begin{center}
+        \(\ast~\ast~\ast\)
+    \end{center}
+    
+    Note that for any \(x = \alpha_1 + \alpha_2\vi + \alpha_3 \vj + \alpha_4\vk \in I\),
+    \(N(x) = \alpha_1^2 + \alpha_2^2 + \alpha_3^2 + \alpha_4^2\).
+    If all \(\alpha_i\) are integers, then clearly \(N(x)\) is an integer as well.
+    If however, \(\alpha_i\) are all halfs of odd integers, then for some \(\alpha_i' \in \mathbb{Z}\),
+    \begin{align*}
+        N(x) &= (\alpha_1' + 1/2)^2 + (\alpha_2' + 1/2)^2 + (\alpha_3' + 1/2)^2 + (\alpha_4' + 1/2)^2\\
+        &= [(\alpha_1')^2 + 2 \alpha_1' + 1/4] + [(\alpha_2')^2 + 2 \alpha_2' + 1/4] + [(\alpha_3')^2 + 2 \alpha_3' + 1/4] + [(\alpha_4')^2 + 2 \alpha_4' + 1/4]\\
+        &= (\alpha_1')^2 + 2 \alpha_1 + (\alpha_2')^2 + 2 \alpha_2' + (\alpha_3')^2 + 2 \alpha_3' + (\alpha_4')^2 + 2 \alpha_4' + 1\\
+        & \in \mathbb{Z}.
+    \end{align*}
+    Now, clearly \(T(x) = 2 \alpha_1 \in \mathbb{Z}\) regardless if \(\alpha_1\) is an integer of a half of an odd integer.
+
+    \begin{center}
+        \(\ast~\ast~\ast\)
+    \end{center}
+
+    Note that by Ex.3 on p.100 of Jacobson, \(N(xy) = N(x)N(y)\) for \(x,y \in \H\).
+    This means that \(N: \H \to \R_{\geq 0}\) is a homomorphism.
+    Therefore, if \(x\) is a unit in \(I\), then \(1 = N(1) = N(x)N(x^{-1})\).
+    Since \(N(x), N(x^{-1}) \in I\) by the above results, \(N(x) = 1\).
+    Therefore, the subset of \(I\) that satisfy such condition is
+    \begin{align*}
+        \pm 1, \pm \vi, \pm \vj, \pm \vk, \frac{1}{2}(1 \pm \vi \pm \vj \pm \vk),
+    \end{align*}
+    and they are all units as their inverses in \(\H\) are in \(I\) as well.
+    
 
 \end{fproof}
 \newpage
@@ -61,7 +154,7 @@
 
 % Problem 4
 \begin{fproof}[Jacobson 2.5.3]
-
+    
 \end{fproof}
 \newpage
 
@@ -79,6 +172,34 @@
 
 % Problem 7
 \begin{fproof}[Jacobson 2.7.4]
+  Fix a prime \(p\).
+  Let's name the endomorphism \(a \mapsto a^{p}\) as \(\eta\).
+  We show that \(\eta(1) = 1\), \(\eta(a+b) = \eta(a)+ \eta(b)\), and \(\eta(ab) = \eta(a)\eta(b)\) for any \(a,b \in R\).
+
+  Let \(a,b \in R\) be arbitrary.
+  First note that \(1^p = 1\). Hence \(\eta\) fixes the multiplicative identity.
+  And since \(R\) is commutative, \((ab)^p = a^p \cdot b^p\) by permuting all the \(b\)'s to the left.
+
+  Also note that for \(1 \leq k \leq p-1\),
+  \begin{align*}
+    \binom{p}{k} = \frac{p!}{k!(p-k)!} = p \cdot \frac{(p-1)!}{k!(p-k)!}.
+  \end{align*}
+  Since none of the factors of \(k!\) and \((p-k)!\) divide \(p\), \(p \mid \binom{p}{k}\). This means that for all \(1 \leq k \leq p-1\) and for all \(x \in R\),
+  \begin{align*}
+    \binom{p}{k}x = (mp)x = m(px) = m(0) = 0,
+  \end{align*}
+  for some integer \(m\).
+  Therefore,
+  \begin{align*}
+    (a+b)^p &= \sum_{i=0}^{p} \binom{p}{k} a^{p-i}b^{i}\\
+    & = a^p + \binom{p}{1}a^{p-1}b + \cdots + \binom{p}{p-1}ab^{p-1} + b^p\\
+    & = a^p + b^p.
+  \end{align*}
+  This concludes the proof that \(\eta\) is an endomorphism.
+  \begin{center}
+    \(\ast~\ast~\ast\)
+  \end{center}
+  \(\eta\) is NOT an automorphism on \(R\). Here is a counter-example.
 
 \end{fproof}
 \newpage
