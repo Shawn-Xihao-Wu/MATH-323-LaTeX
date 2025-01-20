@@ -204,6 +204,21 @@
 
 % Problem 6
 \begin{fproof}[Jacobson 2.7.2]
+    Since \(u\) is a unit, \(u^{-1}\) exists.
+    Also notice that \(\eta(1) = 1'\).
+    Therefore, \(\eta(1) = \eta(uu^{-1}) = \eta(u) \eta(u^{-1}) = 1'\).
+    Similarly, \(\eta(u^{-1}) \eta(u) = 1'\).
+    Therefore, \(\eta(u)^{-1} = \eta(u^{-1})\), i.e., \(\eta(u)\) is a unit as well.
+
+    \begin{center}
+        \(\ast~\ast~\ast\)
+    \end{center}
+
+    And NO, even if \(\eta\) is surjective, \(\eta\) does not map the group of units of \(R\) onto the group of units of \(R'\).
+    Let \(R = R' = \mathbb{Q}[X]\), i.e., polynomials with rational coefficients.
+    And let \(\eta\) be the derivative map \(p \mapsto p'\).
+    The group of units, \(U\), of \(\mathbb{Q}[X]\) is the nonzero constant polynomials.
+    However, \(\eta(U) = \set{0} \neq U\).
 
 \end{fproof}
 \newpage
@@ -238,6 +253,11 @@
     \(\ast~\ast~\ast\)
   \end{center}
   \(\eta\) is NOT an automorphism on \(R\). Here is a counter-example.
+  Let \(R = \mathbb{Z}/p \mathbb{Z}[X]\), i.e., polynomials with coefficients over finite field \(\mathbb{Z}/p \mathbb{Z}\).
+  This ring is of prime characteristic \(p\), as \(p1 = 0\).
+  However, \(\eta\) is not an automorphism as it is not surjective.
+  Note that the degree of any polynomial in \(\eta(\mathbb{Z}/p \mathbb{Z}[X])\) is either \(\geq p\), or \(-\infty\) (i.e., the zero polynomial). 
+  Therefore, polynomial such as \(X\) is outside the range of \(\eta\).
 
 \end{fproof}
 \newpage
